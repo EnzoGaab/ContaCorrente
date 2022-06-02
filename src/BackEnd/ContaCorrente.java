@@ -23,7 +23,21 @@ public class ContaCorrente {
         this.extrato = new ArrayList<Extrato>();
         
     }
-
+    
+    public void setTransferencia(ContaCorrente ContaCred, float Valor){
+    
+        if(Valor <= this.getSaldo()){
+            this.Saldo = this.Saldo - Valor;
+            this.extrato.add(new Extrato(4, Valor));
+            ContaCred.Saldo += Valor;
+            ContaCred.extrato.add(new Extrato(3, Valor));
+            JOptionPane.showMessageDialog(null,"Transferência realizada com sucesso!");
+        }else{
+            JOptionPane.showMessageDialog(null,"Transferência não realizada!");
+        }
+        
+    }
+    
     public int getAgencia() {
         return Agencia;
     }

@@ -22,10 +22,13 @@ public class Extrato {
     public String getTipo() {
         if(this.Tipo == 1){
             return "Deposito";
-        }else{
+        }else if (this.Tipo == 2 ){
             return "Saque";
-        }
-        
+        }else if (this.Tipo == 3){
+            return "Credito de transferência";
+        }else{
+            return "Debito de transferência";
+             }
     }
 
     public void setTipo(int Tipo) {
